@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @genre.name.titleize %></h1>
+
+<h3>Artists in <%= @genre.name.titleize %></h3>
+
+<ul>
+  <% @genre.artists.each do |artist| %>
+  <li><%= link_to artist.name, artist %></li>
+  <% end %>
+</ul>
+
+<h3>Songs in <%= @genre.name.titleize %></h3>
+
+<ul>
+  <% @genre.songs.each do |song| %>
+  <li><%= link_to song.title, song %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_genre_path(@genre) %>
+<%= link_to 'Back', genres_path %>

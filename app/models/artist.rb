@@ -2,7 +2,7 @@ class Artist < ActiveRecord::Base
   belongs_to :genre
   has_many :songs
 
-validates name:, presence: true, uniqueness: true
+validates :name, presence: true, uniqueness: true
 
 # this line says yu have to enter something for the genre_id
 validates :genre_id, presence: true
